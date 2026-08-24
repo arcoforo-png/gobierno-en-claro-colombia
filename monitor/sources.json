@@ -16,5 +16,24 @@
     "name": "Actualidad legislativa del Senado",
     "category": "agenda-legislativa",
     "url": "https://www.senado.gov.co/"
+  },
+  {
+    "id": "entidades-adscritas-funcion-publica",
+    "name": "Directorio nacional de entidades adscritas de Función Pública",
+    "category": "entidades-adscritas",
+    "url": "https://www.funcionpublica.gov.co/gestor-normativo/manual-estructura-del-estado/rama-ejecutiva-orden-nacional"
+  },
+  {
+    "id": "actos-nombramiento-presidencia",
+    "name": "Actos administrativos de nombramiento de Presidencia",
+    "category": "nombramientos-entidades-adscritas",
+    "url": "https://dapre.presidencia.gov.co/AtencionCiudadana/actos-administrativos"
+  },
+  {
+    "id": "decretos-nombramientos-presidencia",
+    "name": "Decretos presidenciales del mes (incluye nombramientos)",
+    "category": "nombramientos-entidades-adscritas",
+    "url": "https://dapre.presidencia.gov.co/normativa/decretos-{year}/decretos-{month_slug}-{year}"
   }
 ]
+
