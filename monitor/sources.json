@@ -34,6 +34,18 @@
     "name": "Decretos presidenciales del mes (incluye nombramientos)",
     "category": "nombramientos-entidades-adscritas",
     "url": "https://dapre.presidencia.gov.co/normativa/decretos-{year}/decretos-{month_slug}-{year}"
+  },
+  {
+    "id": "resultados-territoriales-registraduria",
+    "name": "Histórico oficial de resultados electorales territoriales",
+    "category": "autoridades-territoriales",
+    "url": "https://observatorio.registraduria.gov.co/views/electoral/historicos-resultados.php"
+  },
+  {
+    "id": "elecciones-atipicas-registraduria",
+    "name": "Elecciones territoriales atípicas",
+    "category": "autoridades-territoriales",
+    "url": "https://wapp.registraduria.gov.co/electoral/atipicas/index.html"
   }
 ]
 
