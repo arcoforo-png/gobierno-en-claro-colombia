@@ -49,3 +49,9 @@ Cuando detecta un cambio o una fuente deja de responder, abre una alerta en GitH
 
 También puede ejecutarse manualmente desde **Actions → Vigilar fuentes oficiales → Run workflow**.
 
+## Expansión territorial
+
+La ampliación seguirá este orden editorial: completar capitales departamentales, incorporar municipios por departamento y revisar elecciones atípicas antes de publicar. Los futuros conjuntos territoriales se separarán por departamento para que la aplicación cargue únicamente los registros consultados.
+
+Las fuentes base son el histórico electoral y el registro de elecciones atípicas de la Registraduría Nacional, complementados con el sitio oficial de cada alcaldía.
+
