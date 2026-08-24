@@ -41,4 +41,10 @@ pnpm build
 
 Este paquete conserva la configuración original usada para desarrollar la aplicación en OpenAI Sites. Guardarlo en GitHub funciona de inmediato como repositorio de código. Publicarlo mediante GitHub Pages requiere una adaptación adicional del proceso de compilación y de las rutas del repositorio.
 
+## Vigilancia de fuentes oficiales
 
+La segunda fase ejecuta diariamente el flujo `Vigilar fuentes oficiales` a las 06:15 de Colombia. Revisa fuentes oficiales de Presidencia y Senado y compara su contenido con la revisión anterior.
+
+Cuando detecta un cambio o una fuente deja de responder, abre una alerta en GitHub Issues para revisión editorial. El monitor nunca modifica automáticamente el gabinete, la agenda legislativa ni el sitio publicado.
+
+También puede ejecutarse manualmente desde **Actions → Vigilar fuentes oficiales → Run workflow**.

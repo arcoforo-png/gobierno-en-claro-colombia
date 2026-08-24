@@ -8,4 +8,5 @@ dist/
 *.log
 .DS_Store
 Thumbs.db
-
+.monitor-state.json
+monitor-report.md
