@@ -1,0 +1,49 @@
+name: Vigilar fuentes oficiales
+
+on:
+  schedule:
+    - cron: '15 11 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Recuperar estado anterior
+        uses: actions/cache/restore@v4
+        with:
+          path: .monitor-state.json
+          key: monitor-${{ github.run_id }}
+          restore-keys: monitor-
+      - name: Consultar fuentes
+        id: monitor
+        run: python scripts/monitor_sources.py
+      - name: Guardar nuevo estado
+        uses: actions/cache/save@v4
+        with:
+          path: .monitor-state.json
+          key: monitor-${{ github.run_id }}
+      - name: Abrir alerta editorial
+        if: steps.monitor.outputs.alert == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          existing=$(gh issue list --state open --search 'Alerta automática de fuentes oficiales in:title' --json number --jq 'length')
+          if [ "$existing" = "0" ]; then
+            gh issue create --title 'Alerta automática de fuentes oficiales' --body-file monitor-report.md --label 'revisión-editorial' || \
+            gh issue create --title 'Alerta automática de fuentes oficiales' --body-file monitor-report.md
+          fi
+      - name: Conservar informe
+        uses: actions/upload-artifact@v4
+        with:
+          name: informe-monitor-${{ github.run_number }}
+          path: monitor-report.md
+          retention-days: 30
