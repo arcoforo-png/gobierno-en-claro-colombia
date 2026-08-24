@@ -17,6 +17,10 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCES_PATH = ROOT / "monitor" / "sources.json"
 STATE_PATH = ROOT / ".monitor-state.json"
 REPORT_PATH = ROOT / "monitor-report.md"
+MONTH_SLUGS = (
+    "enero", "febrero", "marzo", "abril", "mayo", "junio",
+    "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre",
+)
 
 
 def visible_text(raw: str) -> str:
@@ -27,15 +31,20 @@ def visible_text(raw: str) -> str:
     return raw
 
 
-def fetch(source: dict[str, str]) -> tuple[str, int]:
+def resolved_url(template: str, now: datetime) -> str:
+    return template.format(year=now.year, month_slug=MONTH_SLUGS[now.month - 1])
+
+
+def fetch(source: dict[str, str], now: datetime) -> tuple[str, int, str]:
+    url = resolved_url(source["url"], now)
     request = urllib.request.Request(
-        source["url"],
+        url,
         headers={"User-Agent": "GobiernoEnClaroMonitor/1.0 (+GitHub Actions)"},
     )
     with urllib.request.urlopen(request, timeout=35) as response:
         raw = response.read().decode("utf-8", errors="replace")
         text = visible_text(raw)
-        return hashlib.sha256(text.encode("utf-8")).hexdigest(), len(text)
+        return hashlib.sha256(text.encode("utf-8")).hexdigest(), len(text), url
 
 
 def main() -> int:
@@ -44,25 +53,27 @@ def main() -> int:
     if STATE_PATH.exists():
         previous = json.loads(STATE_PATH.read_text(encoding="utf-8"))
 
-    now = datetime.now(timezone.utc).isoformat()
+    checked_at = datetime.now(timezone.utc)
+    now = checked_at.isoformat()
     current: dict[str, dict[str, object]] = {}
     changes: list[dict[str, object]] = []
     errors: list[dict[str, str]] = []
 
     for source in sources:
         try:
-            digest, length = fetch(source)
+            digest, length, url = fetch(source, checked_at)
             current[source["id"]] = {
                 "sha256": digest,
                 "length": length,
                 "checked_at": now,
-                "url": source["url"],
+                "url": url,
             }
             old = previous.get(source["id"], {}).get("sha256")
             if old and old != digest:
-                changes.append(source)
+                changes.append({**source, "url": url})
         except Exception as exc:  # La alerta informa el fallo; no publica datos.
-            errors.append({"name": source["name"], "url": source["url"], "error": str(exc)})
+            url = resolved_url(source["url"], checked_at)
+            errors.append({"name": source["name"], "url": url, "error": str(exc)})
             if source["id"] in previous:
                 current[source["id"]] = previous[source["id"]]
 
@@ -89,9 +100,10 @@ def main() -> int:
         "",
         "1. Abrir la fuente oficial y determinar el cambio exacto.",
         "2. Contrastar con una segunda fuente oficial cuando sea posible.",
-        "3. Actualizar `app/data.ts` (gabinete) o `app/page.tsx` (agenda legislativa).",
-        "4. Registrar la fuente y la fecha de revisión.",
-        "5. Revisar la vista previa antes de incorporar el cambio a `main`.",
+        "3. Identificar la entidad adscrita, el cargo, la persona nombrada y el acto administrativo.",
+        "4. Actualizar `app/data.ts` (gabinete y entidades) o `app/page.tsx` (agenda legislativa).",
+        "5. Registrar la fuente y la fecha de revisión.",
+        "6. Revisar la vista previa antes de incorporar el cambio a `main`.",
     ]
     REPORT_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -106,3 +118,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
