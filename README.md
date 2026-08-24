@@ -43,8 +43,9 @@ Este paquete conserva la configuración original usada para desarrollar la aplic
 
 ## Vigilancia de fuentes oficiales
 
-La segunda fase ejecuta diariamente el flujo `Vigilar fuentes oficiales` a las 06:15 de Colombia. Revisa fuentes oficiales de Presidencia y Senado y compara su contenido con la revisión anterior.
+La segunda fase ejecuta diariamente el flujo `Vigilar fuentes oficiales` a las 06:15 de Colombia. Revisa fuentes oficiales de Presidencia, Senado y Función Pública y compara su contenido con la revisión anterior. Incluye el directorio nacional de entidades adscritas, los actos administrativos de nombramiento y el índice mensual de decretos presidenciales; este último cambia automáticamente de mes y año.
 
 Cuando detecta un cambio o una fuente deja de responder, abre una alerta en GitHub Issues para revisión editorial. El monitor nunca modifica automáticamente el gabinete, la agenda legislativa ni el sitio publicado.
 
 También puede ejecutarse manualmente desde **Actions → Vigilar fuentes oficiales → Run workflow**.
+
