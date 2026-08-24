@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gabinete-presidencia",
+    "name": "Gabinete ministerial de la Presidencia",
+    "category": "gabinete",
+    "url": "https://www.presidencia.gov.co/contenidoVinculado/pre26-gabinete-mesa.html"
+  },
+  {
+    "id": "proyectos-senado",
+    "name": "Buscador de proyectos y leyes del Senado",
+    "category": "agenda-legislativa",
+    "url": "https://leyes.senado.gov.co/"
+  },
+  {
+    "id": "actualidad-senado",
+    "name": "Actualidad legislativa del Senado",
+    "category": "agenda-legislativa",
+    "url": "https://www.senado.gov.co/"
+  }
+]
