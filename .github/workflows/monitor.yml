@@ -2,7 +2,8 @@ name: Vigilar fuentes oficiales
 
 on:
   schedule:
-    - cron: '15 11 * * *'
+    - cron: '17 11 * * *'
+    - cron: '47 23 * * *'
   workflow_dispatch:
 
 permissions:
@@ -13,12 +14,12 @@ jobs:
   monitor:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - name: Recuperar estado anterior
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: .monitor-state.json
           key: monitor-${{ github.run_id }}
@@ -27,7 +28,7 @@ jobs:
         id: monitor
         run: python scripts/monitor_sources.py
       - name: Guardar nuevo estado
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         with:
           path: .monitor-state.json
           key: monitor-${{ github.run_id }}
@@ -36,14 +37,13 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          existing=$(gh issue list --state open --search 'Alerta automática de fuentes oficiales in:title' --json number --jq 'length')
-          if [ "$existing" = "0" ]; then
-            gh issue create --title 'Alerta automática de fuentes oficiales' --body-file monitor-report.md --label 'revisión-editorial' || \
-            gh issue create --title 'Alerta automática de fuentes oficiales' --body-file monitor-report.md
-          fi
+          title="Alerta automática · $(date -u +'%Y-%m-%d %H:%M UTC')"
+          gh issue create --title "$title" --body-file monitor-report.md --label 'revisión-editorial' || \
+          gh issue create --title "$title" --body-file monitor-report.md
       - name: Conservar informe
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: informe-monitor-${{ github.run_number }}
           path: monitor-report.md
           retention-days: 30
+
