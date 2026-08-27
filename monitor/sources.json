@@ -12,16 +12,11 @@
     "url": "https://leyes.senado.gov.co/"
   },
   {
-    "id": "actualidad-senado",
-    "name": "Actualidad legislativa del Senado",
-    "category": "agenda-legislativa",
-    "url": "https://www.senado.gov.co/"
-  },
-  {
     "id": "entidades-adscritas-funcion-publica",
     "name": "Directorio nacional de entidades adscritas de Función Pública",
     "category": "entidades-adscritas",
-    "url": "https://www.funcionpublica.gov.co/gestor-normativo/manual-estructura-del-estado/rama-ejecutiva-orden-nacional"
+    "url": "https://www.funcionpublica.gov.co/documents/d/guest/rama-ejecutiva-orden-nacional",
+    "alert_on_error": false
   },
   {
     "id": "actos-nombramiento-presidencia",
