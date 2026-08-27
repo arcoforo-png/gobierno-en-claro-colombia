@@ -107,7 +107,14 @@ def main() -> int:
     ]
     REPORT_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
-    changed = bool(changes or errors)
+    alerting_errors = [
+        error for error in errors
+        if next(
+            (source.get("alert_on_error", True) for source in sources if source["name"] == error["name"]),
+            True,
+        )
+    ]
+    changed = bool(changes or alerting_errors)
     output = os.environ.get("GITHUB_OUTPUT")
     if output:
         with open(output, "a", encoding="utf-8") as handle:
