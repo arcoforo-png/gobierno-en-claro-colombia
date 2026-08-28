@@ -14,6 +14,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+FINGERPRINT_VERSION = 2
 SOURCES_PATH = ROOT / "monitor" / "sources.json"
 STATE_PATH = ROOT / ".monitor-state.json"
 REPORT_PATH = ROOT / "monitor-report.md"
@@ -101,9 +102,10 @@ def main() -> int:
         url = resolved_url(str(source["url"]), checked_at)
         try:
             digest, length, url, excerpts = fetch(source, checked_at)
-            current[source["id"]] = {"sha256": digest, "length": length, "checked_at": now, "url": url, "excerpts": excerpts}
+            current[source["id"]] = {"fingerprint_version": FINGERPRINT_VERSION, "sha256": digest, "length": length, "checked_at": now, "url": url, "excerpts": excerpts}
             checked.append(source)
-            old = previous.get(source["id"], {}).get("sha256")
+            old_entry = previous.get(source["id"], {})
+            old = old_entry.get("sha256") if old_entry.get("fingerprint_version") == FINGERPRINT_VERSION else None
             if old and old != digest:
                 changes.append({**source, "url": url, "excerpts": excerpts})
         except Exception as exc:
