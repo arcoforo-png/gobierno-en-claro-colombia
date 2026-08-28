@@ -3,7 +3,6 @@ name: Vigilar fuentes oficiales
 on:
   schedule:
     - cron: '17 11 * * *'
-    - cron: '47 23 * * *'
   workflow_dispatch:
 
 permissions:
@@ -26,6 +25,8 @@ jobs:
           restore-keys: monitor-
       - name: Consultar fuentes
         id: monitor
+        env:
+          FORCE_ALL: ${{ github.event_name == 'workflow_dispatch' && 'true' || 'false' }}
         run: python scripts/monitor_sources.py
       - name: Guardar nuevo estado
         uses: actions/cache/save@v5
@@ -37,13 +38,15 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          title="Alerta automática · $(date -u +'%Y-%m-%d %H:%M UTC')"
+          title="${{ steps.monitor.outputs.alert_title }}"
           gh issue create --title "$title" --body-file monitor-report.md --label 'revisión-editorial' || \
           gh issue create --title "$title" --body-file monitor-report.md
       - name: Conservar informe
         uses: actions/upload-artifact@v7
         with:
           name: informe-monitor-${{ github.run_number }}
-          path: monitor-report.md
+          path: |
+            monitor-report.md
+            monitor-technical.md
           retention-days: 30
 
