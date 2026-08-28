@@ -3,44 +3,68 @@
     "id": "gabinete-presidencia",
     "name": "Gabinete ministerial de la Presidencia",
     "category": "gabinete",
-    "url": "https://www.presidencia.gov.co/contenidoVinculado/pre26-gabinete-mesa.html"
+    "url": "https://www.presidencia.gov.co/contenidoVinculado/pre26-gabinete-mesa.html",
+    "cadence": "daily",
+    "purpose": "Comprobar si Presidencia anunció un cambio en la persona que encabeza un ministerio o la Vicepresidencia.",
+    "question": "¿Cambió el nombre, cargo o condición de posesión de alguna persona del gabinete nacional?",
+    "evidence": "Identifique la persona, el cargo, la fecha y el decreto o comunicado oficial que formaliza el cambio.",
+    "signal_terms": ["ministro", "ministra", "ministerio", "vicepresidente", "vicepresidenta", "gabinete", "posesión"]
   },
   {
     "id": "proyectos-senado",
     "name": "Buscador de proyectos y leyes del Senado",
     "category": "agenda-legislativa",
-    "url": "https://leyes.senado.gov.co/"
+    "url": "https://leyes.senado.gov.co/",
+    "cadence": "daily",
+    "purpose": "Detectar publicaciones nuevas o cambios de estado en iniciativas legislativas del Congreso.",
+    "question": "¿Apareció un proyecto nuevo o cambió el estado, ponencia, comisión o trámite de una iniciativa ya registrada?",
+    "evidence": "Registre número del proyecto, título, autores, fecha, cámara, comisión y enlace a la ficha oficial.",
+    "signal_terms": ["proyecto de ley", "proyecto de acto legislativo", "estado", "ponencia", "comisión", "radicado"]
   },
   {
     "id": "entidades-adscritas-funcion-publica",
-    "name": "Directorio nacional de entidades adscritas de Función Pública",
-    "category": "entidades-adscritas",
+    "name": "Manual de estructura del Estado de Función Pública",
+    "category": "clasificación-institucional",
     "url": "https://www.funcionpublica.gov.co/documents/d/guest/rama-ejecutiva-orden-nacional",
+    "cadence": "monthly",
+    "purpose": "Comprobar cambios en la adscripción, vinculación o naturaleza jurídica de entidades nacionales; no vigila nombramientos.",
+    "question": "¿Cambió el ministerio cabeza de sector o la clasificación jurídica de una entidad incluida en la aplicación?",
+    "evidence": "Identifique entidad, sector administrativo, naturaleza anterior y nueva, norma citada y fecha de vigencia.",
+    "signal_terms": ["sector administrativo", "adscrita", "vinculada", "establecimiento público", "unidad administrativa", "superintendencia"],
     "alert_on_error": false
   },
   {
     "id": "actos-nombramiento-presidencia",
     "name": "Actos administrativos de nombramiento de Presidencia",
-    "category": "nombramientos-entidades-adscritas",
-    "url": "https://dapre.presidencia.gov.co/AtencionCiudadana/actos-administrativos"
+    "category": "nombramientos-ejecutivo",
+    "url": "https://dapre.presidencia.gov.co/AtencionCiudadana/actos-administrativos",
+    "cadence": "daily",
+    "purpose": "Detectar nuevos actos administrativos que nombren, encarguen o retiren directivos del Ejecutivo nacional.",
+    "question": "¿Se publicó un acto que cambie la persona titular o encargada de un cargo directivo seguido por la aplicación?",
+    "evidence": "Identifique entidad, cargo, persona, tipo y número de acto, fecha, condición (titular o encargo) y enlace al documento.",
+    "signal_terms": ["nombramiento", "nombrar", "encargo", "encargar", "retiro", "aceptar renuncia", "director", "presidente", "superintendente"]
   },
   {
     "id": "decretos-nombramientos-presidencia",
-    "name": "Decretos presidenciales del mes (incluye nombramientos)",
-    "category": "nombramientos-entidades-adscritas",
-    "url": "https://dapre.presidencia.gov.co/normativa/decretos-{year}/decretos-{month_slug}-{year}"
-  },
-  {
-    "id": "resultados-territoriales-registraduria",
-    "name": "Histórico oficial de resultados electorales territoriales",
-    "category": "autoridades-territoriales",
-    "url": "https://observatorio.registraduria.gov.co/views/electoral/historicos-resultados.php"
+    "name": "Decretos presidenciales del mes relacionados con nombramientos",
+    "category": "nombramientos-ejecutivo",
+    "url": "https://dapre.presidencia.gov.co/normativa/decretos-{year}/decretos-{month_slug}-{year}",
+    "cadence": "daily",
+    "purpose": "Detectar decretos nuevos que nombren, encarguen, trasladen o retiren altos cargos del Ejecutivo nacional.",
+    "question": "¿Algún decreto nuevo modifica una autoridad o directivo actualmente mostrado en Gobierno en Claro?",
+    "evidence": "Identifique entidad, cargo, persona entrante y saliente si consta, número de decreto, fecha y enlace al PDF.",
+    "signal_terms": ["nombramiento", "nombra", "encarga", "encargo", "retiro", "renuncia", "director", "ministro", "superintendente"]
   },
   {
     "id": "elecciones-atipicas-registraduria",
-    "name": "Elecciones territoriales atípicas",
+    "name": "Calendario de elecciones territoriales atípicas de la Registraduría",
     "category": "autoridades-territoriales",
-    "url": "https://wapp.registraduria.gov.co/electoral/atipicas/index.html"
+    "url": "https://wapp.registraduria.gov.co/electoral/atipicas/index.html",
+    "cadence": "weekly",
+    "purpose": "Comprobar si la Registraduría convocó o modificó el calendario de una elección atípica territorial.",
+    "question": "¿Hay una nueva elección atípica o cambió la fecha, territorio o cargo de una elección ya anunciada?",
+    "evidence": "Identifique departamento o municipio, cargo por elegir, fecha de elección, motivo de la vacancia y enlace al calendario oficial. Revise resultados sólo después de celebrarse esa elección.",
+    "signal_terms": ["elección atípica", "calendario electoral", "alcalde", "gobernador", "municipio", "departamento", "fecha de elección"]
   }
 ]
 
