@@ -39,10 +39,10 @@
     "category": "nombramientos-ejecutivo",
     "url": "https://dapre.presidencia.gov.co/AtencionCiudadana/actos-administrativos",
     "cadence": "daily",
-    "purpose": "Detectar nuevos actos administrativos que nombren, encarguen o retiren directivos del Ejecutivo nacional.",
-    "question": "¿Se publicó un acto que cambie la persona titular o encargada de un cargo directivo seguido por la aplicación?",
-    "evidence": "Identifique entidad, cargo, persona, tipo y número de acto, fecha, condición (titular o encargo) y enlace al documento.",
-    "signal_terms": ["nombramiento", "nombrar", "encargo", "encargar", "retiro", "aceptar renuncia", "director", "presidente", "superintendente"]
+    "purpose": "Detectar nuevos actos administrativos sobre ministros, viceministros, directores de departamentos administrativos, cabezas de entidad y secretarios generales.",
+    "question": "¿Se publicó un acto que cambie la persona titular o encargada de uno de los altos cargos seguidos por la aplicación?",
+    "evidence": "Identifique institución, cargo exacto, persona, tipo y número de acto, fecha, condición (titular o encargo) y enlace al documento.",
+    "signal_terms": ["nombramiento", "nombrar", "encargo", "encargar", "retiro", "aceptar renuncia", "viceministro", "viceministra", "director de departamento", "secretario general", "secretaria general", "director", "presidente", "superintendente"]
   },
   {
     "id": "decretos-nombramientos-presidencia",
