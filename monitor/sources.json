@@ -190,6 +190,46 @@
     "evidence": "Identifique persona, cargo exacto, condición de titular o encargo, fecha y acto si está publicado.",
     "signal_terms": ["ministra de salud", "viceministro", "viceministra", "secretaria general", "secretario general"],
     "alert_on_error": false
+  },
+  {
+    "id": "directivos-cancilleria", "name": "Directivos del Ministerio de Relaciones Exteriores", "category": "directorios-ministeriales", "url": "https://www.cancilleria.gov.co/el-ministerio/directivos", "cadence": "weekly",
+    "purpose": "Contrastar los viceministerios y la Secretaría General de la Cancillería.", "question": "¿Cambió alguno de los altos directivos publicados por la Cancillería?", "evidence": "Identifique cargo exacto, persona, condición de titular o encargo y acto oficial si está enlazado.",
+    "signal_terms": ["viceministra", "viceministro", "secretaria general", "secretario general"], "alert_on_error": false
+  },
+  {
+    "id": "organigrama-minenergia", "name": "Organigrama del Ministerio de Minas y Energía", "category": "directorios-ministeriales", "url": "https://www.minenergia.gov.co/es/ministerio/estructura-organizacional/organigrama-interactivo/", "cadence": "weekly",
+    "purpose": "Contrastar ministra, viceministros y Secretaría General de Minas y Energía.", "question": "¿Cambió alguno de los titulares o encargados del equipo directivo de Minas y Energía?", "evidence": "Identifique cargo, persona, condición de titular o encargo y fecha de actualización.",
+    "signal_terms": ["ministra", "viceministro", "secretaría general", "encargado"], "alert_on_error": false
+  },
+  {
+    "id": "directivos-mincit", "name": "Funcionarios principales del Ministerio de Comercio", "category": "directorios-ministeriales", "url": "https://www.mincit.gov.co/ministerio/organizacion/funcionarios-principales", "cadence": "weekly",
+    "purpose": "Contrastar ministro, viceministros y Secretaría General de Comercio, Industria y Turismo.", "question": "¿Cambió alguno de los funcionarios principales del Ministerio de Comercio?", "evidence": "Identifique cargo exacto, persona y fecha de actualización del directorio.",
+    "signal_terms": ["ministro", "viceministra", "viceministro", "secretario general"], "alert_on_error": false
+  },
+  {
+    "id": "directivos-minvivienda", "name": "Funcionarios directivos del Ministerio de Vivienda", "category": "directorios-ministeriales", "url": "https://minvivienda.gov.co/ministerio/gestion-institucional/funcionarios-directivos", "cadence": "weekly",
+    "purpose": "Contrastar ministro, viceministros y Secretaría General de Vivienda.", "question": "¿Cambió alguno de los funcionarios directivos del Ministerio de Vivienda?", "evidence": "Identifique cargo, persona, condición de titular o encargo y acto si está enlazado.",
+    "signal_terms": ["ministro", "viceministro", "viceministra", "secretaria general"], "alert_on_error": false
+  },
+  {
+    "id": "directivos-mintic", "name": "Equipo directivo del Ministerio TIC", "category": "directorios-ministeriales", "url": "https://mintic.gov.co/portal/inicio/Ministerio/", "cadence": "weekly",
+    "purpose": "Contrastar ministra, viceministros y Secretaría General del Ministerio TIC.", "question": "¿Cambió alguno de los altos cargos publicados por el Ministerio TIC?", "evidence": "Identifique cargo, persona, fecha de actualización y acto o noticia oficial.",
+    "signal_terms": ["ministra", "viceministro de conectividad", "transformación digital", "secretaria general"], "alert_on_error": false
+  },
+  {
+    "id": "directivos-mintransporte", "name": "Equipo directivo del Ministerio de Transporte", "category": "directorios-ministeriales", "url": "https://mintransporte.gov.co/publicaciones/185/viceministra-de-infraestructura/", "cadence": "weekly",
+    "purpose": "Contrastar los titulares de los viceministerios del Ministerio de Transporte.", "question": "¿Cambió la persona titular o encargada de un viceministerio de Transporte?", "evidence": "Identifique viceministerio, persona, condición, fecha y acto oficial.",
+    "signal_terms": ["viceministra", "viceministro", "infraestructura", "transporte"], "alert_on_error": false
+  },
+  {
+    "id": "directivos-minciencias", "name": "Ministra y viceministros de Ciencia", "category": "directorios-ministeriales", "url": "https://www.minciencias.gov.co/ministro_y_viceministros", "cadence": "weekly",
+    "purpose": "Contrastar ministra, viceministros y actos de nombramiento de MinCiencias.", "question": "¿Cambió alguno de los altos cargos de Ciencia, Tecnología e Innovación?", "evidence": "Identifique cargo, persona, número y fecha del decreto de nombramiento.",
+    "signal_terms": ["ministra", "viceministra", "viceministro", "nombramiento", "decreto"], "alert_on_error": false
+  },
+  {
+    "id": "dependencias-mindeporte", "name": "Dependencias y responsables del Ministerio del Deporte", "category": "directorios-ministeriales", "url": "https://www.mindeporte.gov.co/mindeporte/quienes-somos/dependencias", "cadence": "weekly",
+    "purpose": "Contrastar ministra, viceministro y Secretaría General del Ministerio del Deporte.", "question": "¿Cambió alguno de los responsables del equipo directivo del Ministerio del Deporte?", "evidence": "Identifique cargo, persona, condición y acto o noticia oficial de posesión.",
+    "signal_terms": ["ministra", "viceministro", "secretario general"], "alert_on_error": false
   }
 ]
 
