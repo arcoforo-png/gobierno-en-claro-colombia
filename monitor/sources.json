@@ -178,6 +178,18 @@
     "evidence": "Identifique persona, cargo, condición de titular o encargo, fecha y acto de nombramiento.",
     "signal_terms": ["secretaria general", "secretario general", "encargado", "encargada"],
     "alert_on_error": false
+  },
+  {
+    "id": "directorio-minsalud",
+    "name": "Directorio de funcionarios principales de MinSalud",
+    "category": "directorios-ministeriales",
+    "url": "https://www.minsalud.gov.co/ministerio/lists/directorio%20funcionarios%20principales/funcionarios-minsalud.aspx",
+    "cadence": "weekly",
+    "purpose": "Contrastar ministra, viceministros y secretaría general del Ministerio de Salud.",
+    "question": "¿Cambió alguno de los titulares o encargados del equipo directivo de MinSalud?",
+    "evidence": "Identifique persona, cargo exacto, condición de titular o encargo, fecha y acto si está publicado.",
+    "signal_terms": ["ministra de salud", "viceministro", "viceministra", "secretaria general", "secretario general"],
+    "alert_on_error": false
   }
 ]
 
