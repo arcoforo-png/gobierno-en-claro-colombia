@@ -230,6 +230,18 @@
     "id": "dependencias-mindeporte", "name": "Dependencias y responsables del Ministerio del Deporte", "category": "directorios-ministeriales", "url": "https://www.mindeporte.gov.co/mindeporte/quienes-somos/dependencias", "cadence": "weekly",
     "purpose": "Contrastar ministra, viceministro y Secretaría General del Ministerio del Deporte.", "question": "¿Cambió alguno de los responsables del equipo directivo del Ministerio del Deporte?", "evidence": "Identifique cargo, persona, condición y acto o noticia oficial de posesión.",
     "signal_terms": ["ministra", "viceministro", "secretario general"], "alert_on_error": false
+  },
+  {
+    "id": "proyectos-camara",
+    "name": "Registro de proyectos de ley de la Cámara de Representantes",
+    "category": "agenda-legislativa",
+    "url": "https://www.camara.gov.co/proyectos-de-ley/",
+    "cadence": "weekly",
+    "purpose": "Detectar proyectos nuevos del Gobierno y cambios de estado, numeración o trámite en iniciativas ya registradas.",
+    "question": "¿Se radicó una iniciativa del Ejecutivo o cambió su estado en la Cámara de Representantes?",
+    "evidence": "Identifique números de Cámara y Senado, título, autores gubernamentales, fecha, estado, comisión y enlace a la ficha oficial.",
+    "signal_terms": ["ministro", "ministra", "Gobierno Nacional", "iniciativa gubernamental", "estado", "primer debate", "segundo debate"],
+    "alert_on_error": false
   }
 ]
 
