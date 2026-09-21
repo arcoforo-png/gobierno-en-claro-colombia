@@ -112,8 +112,8 @@ def main() -> int:
             errors.append({**source, "url": url, "error": str(exc)})
 
     STATE_PATH.write_text(json.dumps(current, indent=2, ensure_ascii=False), encoding="utf-8")
-    alerting_errors = [item for item in errors if item.get("alert_on_error", True)]
-    actionable = changes + alerting_errors
+    # Los fallos de red son datos técnicos, no dudas editoriales ni evidencia de cambio.
+    actionable = changes
 
     report = ["# Dudas concretas para revisión editorial", "", f"Fecha UTC: `{now}`", "", "Este informe no modifica Gobierno en Claro. Cada apartado formula una sola comprobación humana."]
     if actionable:
