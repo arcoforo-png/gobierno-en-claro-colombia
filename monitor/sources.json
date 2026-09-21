@@ -70,6 +70,78 @@
     "evidence": "Identifique departamento o municipio, cargo por elegir, fecha de elección, motivo de la vacancia y enlace al calendario oficial. Revise resultados sólo después de celebrarse esa elección.",
     "signal_terms": ["elección atípica", "calendario electoral", "alcalde", "gobernador", "municipio", "departamento", "fecha de elección"],
     "alert_on_error": false
+  },
+  {
+    "id": "equipo-mininterior",
+    "name": "Equipo directivo del Ministerio del Interior",
+    "category": "directorios-ministeriales",
+    "url": "https://www.mininterior.gov.co/noticias/el-ministro-rodrigo-lara-restrepo-posesiono-a-los-nuevos-viceministros-del-ministerio-del-interior/",
+    "cadence": "weekly",
+    "purpose": "Contrastar ministro, viceministros y secretario general del Ministerio del Interior.",
+    "question": "¿Cambió alguno de los titulares identificados en el equipo directivo del Ministerio del Interior?",
+    "evidence": "Identifique cargo, persona, condición de titular o encargo, fecha y acto de posesión o nombramiento.",
+    "signal_terms": ["ministro", "viceministro", "viceministra", "secretario general", "secretaria general", "posesionó"],
+    "alert_on_error": false
+  },
+  {
+    "id": "directorio-mineducacion",
+    "name": "Directorio de directivos del Ministerio de Educación",
+    "category": "directorios-ministeriales",
+    "url": "https://www.mineducacion.gov.co/1780/w3-article-89256.html?_noredirect=1",
+    "cadence": "weekly",
+    "purpose": "Contrastar ministra, viceministros y secretario general del Ministerio de Educación.",
+    "question": "¿Cambió alguno de los titulares del directorio directivo del Ministerio de Educación?",
+    "evidence": "Identifique cargo exacto, persona, fecha de actualización del directorio y acto si está enlazado.",
+    "signal_terms": ["ministra", "viceministerio", "secretario general", "secretaria general"],
+    "alert_on_error": false
+  },
+  {
+    "id": "directorio-minhacienda",
+    "name": "Directorio de directivos del Ministerio de Hacienda",
+    "category": "directorios-ministeriales",
+    "url": "https://www.minhacienda.gov.co/entidad/directivos",
+    "cadence": "weekly",
+    "purpose": "Contrastar ministro, viceministros y secretario general del Ministerio de Hacienda.",
+    "question": "¿Cambió alguno de los titulares del directorio directivo del Ministerio de Hacienda?",
+    "evidence": "Identifique cargo exacto, persona, fecha de actualización del directorio y acto si está enlazado.",
+    "signal_terms": ["ministro", "viceministro general", "viceministro técnico", "secretario general"],
+    "alert_on_error": false
+  },
+  {
+    "id": "equipo-minambiente",
+    "name": "Equipo directivo del Ministerio de Ambiente",
+    "category": "directorios-ministeriales",
+    "url": "https://www.minambiente.gov.co/posesionados-nuevos-viceministros-secretario-general-de-minambiente-y-director-de-anla/",
+    "cadence": "weekly",
+    "purpose": "Contrastar ministro, viceministros, secretario general y director de ANLA del sector Ambiente.",
+    "question": "¿Cambió alguno de los titulares del equipo directivo de Ambiente o la dirección de ANLA?",
+    "evidence": "Identifique cargo, persona, condición de titular o encargo, fecha y acto de posesión o nombramiento.",
+    "signal_terms": ["ministro", "viceministro", "secretario general", "director", "ANLA"],
+    "alert_on_error": false
+  },
+  {
+    "id": "directivos-minagricultura",
+    "name": "Directivos del Ministerio de Agricultura",
+    "category": "directorios-ministeriales",
+    "url": "https://www.minagricultura.gov.co/el-ministerio/viceministerios/viceministerio-de-asuntos-agropecuarios",
+    "cadence": "weekly",
+    "purpose": "Contrastar los titulares de los viceministerios del Ministerio de Agricultura.",
+    "question": "¿Cambió la persona que encabeza uno de los viceministerios de Agricultura?",
+    "evidence": "Identifique viceministerio, persona, fecha de actualización y acto de nombramiento o posesión.",
+    "signal_terms": ["viceministro", "viceministra", "asuntos agropecuarios", "desarrollo rural"],
+    "alert_on_error": false
+  },
+  {
+    "id": "ministra-minciencias",
+    "name": "Dirección del Ministerio de Ciencia",
+    "category": "directorios-ministeriales",
+    "url": "https://minciencias.gov.co/direccion/ministra",
+    "cadence": "weekly",
+    "purpose": "Contrastar la persona titular del Ministerio de Ciencia, Tecnología e Innovación.",
+    "question": "¿Cambió la persona titular del Ministerio de Ciencia, Tecnología e Innovación?",
+    "evidence": "Identifique persona, cargo, fecha y decreto de nombramiento.",
+    "signal_terms": ["ministra", "ministro", "nombramiento", "decreto"],
+    "alert_on_error": false
   }
 ]
 
