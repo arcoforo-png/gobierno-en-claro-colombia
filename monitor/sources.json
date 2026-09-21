@@ -8,18 +8,20 @@
     "purpose": "Comprobar si Presidencia anunció un cambio en la persona que encabeza un ministerio o la Vicepresidencia.",
     "question": "¿Cambió el nombre, cargo o condición de posesión de alguna persona del gabinete nacional?",
     "evidence": "Identifique la persona, el cargo, la fecha y el decreto o comunicado oficial que formaliza el cambio.",
-    "signal_terms": ["ministro", "ministra", "ministerio", "vicepresidente", "vicepresidenta", "gabinete", "posesión"]
+    "signal_terms": ["ministro", "ministra", "ministerio", "vicepresidente", "vicepresidenta", "gabinete", "posesión"],
+    "alert_on_error": false
   },
   {
     "id": "proyectos-senado",
     "name": "Buscador de proyectos y leyes del Senado",
     "category": "agenda-legislativa",
     "url": "https://leyes.senado.gov.co/",
-    "cadence": "daily",
+    "cadence": "weekly",
     "purpose": "Detectar publicaciones nuevas o cambios de estado en iniciativas legislativas del Congreso.",
     "question": "¿Apareció un proyecto nuevo o cambió el estado, ponencia, comisión o trámite de una iniciativa ya registrada?",
     "evidence": "Registre número del proyecto, título, autores, fecha, cámara, comisión y enlace a la ficha oficial.",
-    "signal_terms": ["proyecto de ley", "proyecto de acto legislativo", "estado", "ponencia", "comisión", "radicado"]
+    "signal_terms": ["proyecto de ley", "proyecto de acto legislativo", "estado", "ponencia", "comisión", "radicado"],
+    "alert_on_error": false
   },
   {
     "id": "entidades-adscritas-funcion-publica",
@@ -38,22 +40,24 @@
     "name": "Actos administrativos de nombramiento de Presidencia",
     "category": "nombramientos-ejecutivo",
     "url": "https://dapre.presidencia.gov.co/AtencionCiudadana/actos-administrativos",
-    "cadence": "daily",
+    "cadence": "weekly",
     "purpose": "Detectar nuevos actos administrativos sobre ministros, viceministros, directores de departamentos administrativos, cabezas de entidad y secretarios generales.",
     "question": "¿Se publicó un acto que cambie la persona titular o encargada de uno de los altos cargos seguidos por la aplicación?",
     "evidence": "Identifique institución, cargo exacto, persona, tipo y número de acto, fecha, condición (titular o encargo) y enlace al documento.",
-    "signal_terms": ["nombramiento", "nombrar", "encargo", "encargar", "retiro", "aceptar renuncia", "viceministro", "viceministra", "director de departamento", "secretario general", "secretaria general", "director", "presidente", "superintendente"]
+    "signal_terms": ["nombramiento", "nombrar", "encargo", "encargar", "retiro", "aceptar renuncia", "viceministro", "viceministra", "director de departamento", "secretario general", "secretaria general", "director", "presidente", "superintendente"],
+    "alert_on_error": false
   },
   {
     "id": "decretos-nombramientos-presidencia",
     "name": "Decretos presidenciales del mes relacionados con nombramientos",
     "category": "nombramientos-ejecutivo",
-    "url": "https://dapre.presidencia.gov.co/normativa/decretos-{year}/decretos-{month_slug}-{year}",
+    "url": "https://dapre.presidencia.gov.co/normativa/Paginas/decretos-{month_slug}-{year}.aspx",
     "cadence": "daily",
     "purpose": "Detectar decretos nuevos que nombren, encarguen, trasladen o retiren altos cargos del Ejecutivo nacional.",
     "question": "¿Algún decreto nuevo modifica una autoridad o directivo actualmente mostrado en Gobierno en Claro?",
     "evidence": "Identifique entidad, cargo, persona entrante y saliente si consta, número de decreto, fecha y enlace al PDF.",
-    "signal_terms": ["nombramiento", "nombra", "encarga", "encargo", "retiro", "renuncia", "director", "ministro", "superintendente"]
+    "signal_terms": ["nombramiento", "nombra", "encarga", "encargo", "retiro", "renuncia", "director", "ministro", "superintendente"],
+    "alert_on_error": false
   },
   {
     "id": "elecciones-atipicas-registraduria",
@@ -64,7 +68,8 @@
     "purpose": "Comprobar si la Registraduría convocó o modificó el calendario de una elección atípica territorial.",
     "question": "¿Hay una nueva elección atípica o cambió la fecha, territorio o cargo de una elección ya anunciada?",
     "evidence": "Identifique departamento o municipio, cargo por elegir, fecha de elección, motivo de la vacancia y enlace al calendario oficial. Revise resultados sólo después de celebrarse esa elección.",
-    "signal_terms": ["elección atípica", "calendario electoral", "alcalde", "gobernador", "municipio", "departamento", "fecha de elección"]
+    "signal_terms": ["elección atípica", "calendario electoral", "alcalde", "gobernador", "municipio", "departamento", "fecha de elección"],
+    "alert_on_error": false
   }
 ]
 
