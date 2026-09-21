@@ -142,6 +142,42 @@
     "evidence": "Identifique persona, cargo, fecha y decreto de nombramiento.",
     "signal_terms": ["ministra", "ministro", "nombramiento", "decreto"],
     "alert_on_error": false
+  },
+  {
+    "id": "viceministerio-politica-criminal-minjusticia",
+    "name": "Viceministerio de Política Criminal de MinJusticia",
+    "category": "directorios-ministeriales",
+    "url": "https://www.minjusticia.gov.co/ministerio/Paginas/Viceministerio-de-Pol%C3%ADtica-Criminal-y-Justicia-Restaurativa1.aspx",
+    "cadence": "weekly",
+    "purpose": "Contrastar la persona titular del Viceministerio de Política Criminal y Justicia Restaurativa.",
+    "question": "¿Cambió la persona titular o la condición de encargo de este viceministerio?",
+    "evidence": "Identifique persona, cargo, condición de titular o encargo, fecha y acto de nombramiento.",
+    "signal_terms": ["viceministro", "viceministra", "política criminal", "encargado", "encargada"],
+    "alert_on_error": false
+  },
+  {
+    "id": "viceministerio-promocion-minjusticia",
+    "name": "Viceministerio de Promoción de la Justicia",
+    "category": "directorios-ministeriales",
+    "url": "https://www.minjusticia.gov.co/ministerio/Paginas/viceministerio-de-promocion-de-la-justicia.aspx",
+    "cadence": "weekly",
+    "purpose": "Contrastar la persona titular del Viceministerio de Promoción de la Justicia.",
+    "question": "¿Cambió la persona titular o la condición de encargo de este viceministerio?",
+    "evidence": "Identifique persona, cargo, condición de titular o encargo, fecha y acto de nombramiento.",
+    "signal_terms": ["viceministro", "viceministra", "promoción de la justicia", "encargado", "encargada"],
+    "alert_on_error": false
+  },
+  {
+    "id": "secretaria-general-minjusticia",
+    "name": "Secretaría General del Ministerio de Justicia",
+    "category": "directorios-ministeriales",
+    "url": "https://www.minjusticia.gov.co/ministerio/Paginas/secretaria-general.aspx",
+    "cadence": "weekly",
+    "purpose": "Contrastar la persona titular de la Secretaría General del Ministerio de Justicia.",
+    "question": "¿Cambió la persona titular o la condición de encargo de la Secretaría General?",
+    "evidence": "Identifique persona, cargo, condición de titular o encargo, fecha y acto de nombramiento.",
+    "signal_terms": ["secretaria general", "secretario general", "encargado", "encargada"],
+    "alert_on_error": false
   }
 ]
 
